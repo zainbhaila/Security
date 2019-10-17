@@ -1,0 +1,5 @@
+
+username="alice"
+password="pass' or ''='"
+
+The username matches with alice and the password isnt correct, but the or ''=' completes the statement so that if either the password matches or ''=''(it does) then the login will be authorized.

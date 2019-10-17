@@ -1,0 +1,3 @@
+Libsodium makes it much simpler (less code to write) to implement both encryption and hashing with its functions.
+OpenSSL gives you more options for what encryption modes are used.
+Libsodium requires hardcoding hashing algorithms while OpenSSL can get by name.

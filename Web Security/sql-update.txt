@@ -1,0 +1,5 @@
+
+fullname="Charlie Chaplin' WHERE username='charlie' -- "
+description="desc"
+
+The -- will comment out the rest of the sql proc while my inserted where statement will cause update to occur on anyone with the name Charlie Miller. Putting the apostrophe after Chaplin completes the input for full name and description does nothing since it is part of the comment.

@@ -1,0 +1,11 @@
+For my openssl implementation I encrypted the message using aes 256 in ccm mode. It takes the message, key, and iv - and outputs the cipher and tag. 
+I then concatenate the tag and iv to the front of the cipher to be used in decryption. The tag ensures that the encryption is authenticated and verifies integrity.
+To decrypt, I get the tag and iv from the front of the cipher. Then I pass them along with the rest of the cipher into the decryption method.
+If the tag, key, and iv all match up, then the cipher will be decrypted, else it will return invalid.
+
+For my libsodium implementation I used the provided secretbox encryption to encrypt the message using a randomly generated nonce.
+I then prepended the nonce to the returned cipher to be used with description, since the nonce doesn't have to be private.
+To decrypt, I get the nonce from the front of the cipher and pass it along with the rest of the cipher into
+the secretbox decrypt method. If the nonce, key, and authentication tag all check out, then the cipher will be decrypted,
+otherwise it will return invalid. Secretbox encryption handles integrity by computing an authentication tag itself, and
+then adding it to the cipher to be checked before decrypting.

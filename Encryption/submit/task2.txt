@@ -1,0 +1,11 @@
+1. The CBC image appears to be a random assortment of colorful pixels. 
+The ECB image has the outline of the original image visible. It also repeats the outline a few 
+times. And it also has vertical bars of uniform color across a lot of the image with some areas 
+filled with assorted pixels.
+
+2. The two methods of encryption encrypt the image in different ways. ECB encrypts all blocks 
+individually using the same key and block. CBC encryption relies on the previous blocks to encrypt 
+the current block. 
+
+3. CBC does not give any useful info.
+ECB gives the outline of the original image.

@@ -1,0 +1,31 @@
+libsodium 256
+k		8		16		24
+1		105		42222	10883165
+2		256		69130	6051726
+3		23		42063	15934541
+avg		128		51138	10956477
+
+openssl 256
+k		8		16		24
+1		5		21102	2873665
+2		57		52994	1929371
+3		113		66507	3902299
+avg		58		46867	2901778
+
+libsodium 512
+k		8		16		24
+1		57		16094	2646717
+2		126		92217	44669937
+3		290		101753	39940265
+avg		157		70021	29085639
+
+openssl 512
+k		8		16		24
+1		70		33140	33026655
+2		136		54857	17064047
+3		176		43679	9492106
+avg		127		43892	19860936
+
+As the size of the input increases, the number of texts my program needs to try to 
+match the input increases exponentially (or perhaps quadratically?). It seems to take longer
+when sha512 is used as opposed to sha256. Also, it seems to take longer when using libsodium instead of openssl.

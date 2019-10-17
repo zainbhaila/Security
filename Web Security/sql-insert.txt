@@ -1,0 +1,3 @@
+url="localhost:5000/modify_relation/alice%27%2C%20%27kathy%27%29%20--%20"
+
+The end of the url is equivalent to "alice', 'kathy') -- ". This changes the sql proc to use kathy as the follower_uname and alice as the followed_name and is passed in through the url parameters.
